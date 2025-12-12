@@ -1,10 +1,10 @@
 # AI PR Review Action
 
-AI-powered pull request review using [Cursor](https://cursor.com) agent. Automatically reviews PRs and posts feedback as comments.
+AI-powered PR review using [Cursor](https://cursor.com) agent. Posts review feedback as a single PR comment.
 
-## Usage
+## Quick Start
 
-Add this workflow to your repository at `.github/workflows/ai-pr-review.yml`:
+Create `.github/workflows/ai-pr-review.yml`:
 
 ```yaml
 name: AI PR Review
@@ -33,32 +33,29 @@ jobs:
 
 ## Inputs
 
-| Input            | Required | Default               | Description                                                                    |
-| ---------------- | -------- | --------------------- | ------------------------------------------------------------------------------ |
-| `cursor-api-key` | Yes      | -                     | Cursor API key ([get one here](https://cursor.com/dashboard?tab=integrations)) |
-| `github-token`   | No       | `${{ github.token }}` | GitHub token for API access                                                    |
-| `model`          | No       | `sonnet-4.5-thinking` | Cursor model to use                                                            |
-| `prompt-file`    | No       | -                     | Path to custom prompt file (uses built-in default if not provided)             |
-| `skip-label`     | No       | `skip-ai-review`      | Label name that skips AI review when present                                   |
+| Input            | Required | Default               | Description                                                  |
+| ---------------- | -------- | --------------------- | ------------------------------------------------------------ |
+| `cursor-api-key` | Yes      | ?                     | [Get API key](https://cursor.com/dashboard?tab=integrations) |
+| `github-token`   | No       | `github.token`        | GitHub token for API access                                  |
+| `model`          | No       | `sonnet-4.5-thinking` | Cursor model                                                 |
+| `prompt-file`    | No       | ?                     | Custom prompt file (see [default](prompts/default.md))       |
 
 ## Outputs
 
-| Output     | Description                                                                            |
-| ---------- | -------------------------------------------------------------------------------------- |
-| `decision` | AI review decision: `true` (approve), `false` (request changes), `unknown`, or `error` |
+| Output     | Values                                                          |
+| ---------- | --------------------------------------------------------------- |
+| `decision` | `true` (approve), `false` (request changes), `unknown`, `error` |
 
 ## Custom Prompt
-
-To customize the review prompt, create a markdown file in your repo and reference it:
 
 ```yaml
 - uses: sasa-tomic/ai-pr-review-action@v1
   with:
     cursor-api-key: ${{ secrets.CURSOR_API_KEY }}
-    prompt-file: .github/prompts/my-review-prompt.md
+    prompt-file: .github/prompts/review.md
 ```
 
-The prompt should end with a section for the PR data (which gets appended automatically).
+PR data is appended automatically. See [default prompt](prompts/default.md) for structure.
 
 ## Skipping Review
 
@@ -66,9 +63,8 @@ Add the `skip-ai-review` label to a PR to skip the AI review. Customize the labe
 
 ## Requirements
 
-- Cursor API key (requires Cursor subscription)
-- Repository must grant `pull-requests: write` permission
+- [Cursor API key](https://cursor.com/dashboard?tab=integrations) (requires Cursor subscription)
 
 ## License
 
-APACHE 2.0 License
+Apache-2.0
