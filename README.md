@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: sasa-tomic/argus-code-review@v1
+      - uses: sasa-tomic/argus-code-review-action@v1
         with:
           cursor-api-key: ${{ secrets.CURSOR_API_KEY }}
 ```
@@ -49,7 +49,7 @@ jobs:
 ## Custom Prompt
 
 ```yaml
-- uses: sasa-tomic/argus-code-review@v1
+- uses: sasa-tomic/argus-code-review-action@v1
   with:
     cursor-api-key: ${{ secrets.CURSOR_API_KEY }}
     prompt-file: .github/prompts/review.md
