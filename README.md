@@ -42,7 +42,7 @@ jobs:
 | `cursor-api-key` | Yes      | ?                     | [Get API key](https://cursor.com/dashboard?tab=integrations) |
 | `github-token`   | No       | `github.token`        | GitHub token for API access                                  |
 | `model`          | No       | `sonnet-4.5-thinking` | Cursor model                                                 |
-| `prompt-file`    | No       | ?                     | Custom prompt file (see [default](prompts/default.md))       |
+| `prompt-file`    | No       |                       | Custom prompt file (see [default](prompts/default.md))       |
 
 ## Outputs
 
