@@ -1,6 +1,6 @@
 {
   "name": "ai-pr-review-action",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "AI-powered PR review using Cursor agent",
   "author": "sasa-tomic",
   "license": "Apache-2.0",
