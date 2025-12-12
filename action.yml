@@ -1,4 +1,4 @@
-name: 'AI PR Review'
+name: 'Argus Code Review'
 description: 'AI-powered PR review using Cursor agent. Posts review comments on pull requests.'
 author: 'sasa-tomic'
 
