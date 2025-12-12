@@ -33,18 +33,18 @@ jobs:
 
 ## Inputs
 
-| Input | Required | Default | Description |
-|-------|----------|---------|-------------|
-| `cursor-api-key` | Yes | - | Cursor API key ([get one here](https://cursor.com/dashboard?tab=integrations)) |
-| `github-token` | No | `${{ github.token }}` | GitHub token for API access |
-| `model` | No | `sonnet-4.5-thinking` | Cursor model to use |
-| `prompt-file` | No | - | Path to custom prompt file (uses built-in default if not provided) |
-| `skip-label` | No | `skip-ai-review` | Label name that skips AI review when present |
+| Input            | Required | Default               | Description                                                                    |
+| ---------------- | -------- | --------------------- | ------------------------------------------------------------------------------ |
+| `cursor-api-key` | Yes      | -                     | Cursor API key ([get one here](https://cursor.com/dashboard?tab=integrations)) |
+| `github-token`   | No       | `${{ github.token }}` | GitHub token for API access                                                    |
+| `model`          | No       | `sonnet-4.5-thinking` | Cursor model to use                                                            |
+| `prompt-file`    | No       | -                     | Path to custom prompt file (uses built-in default if not provided)             |
+| `skip-label`     | No       | `skip-ai-review`      | Label name that skips AI review when present                                   |
 
 ## Outputs
 
-| Output | Description |
-|--------|-------------|
+| Output     | Description                                                                            |
+| ---------- | -------------------------------------------------------------------------------------- |
 | `decision` | AI review decision: `true` (approve), `false` (request changes), `unknown`, or `error` |
 
 ## Custom Prompt
@@ -71,4 +71,4 @@ Add the `skip-ai-review` label to a PR to skip the AI review. Customize the labe
 
 ## License
 
-MIT
+APACHE 2.0 License
